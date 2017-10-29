@@ -24,4 +24,14 @@ istream& MojeOperatory::operator>>(istream& strumien, TString& s) {
 }
 	
 
+TString MojeOperatory::operator+( const TString& a, const TString& b ) {
+	TString tmp { a };
+	tmp.push_back( b.c_str() ); // c_str() zwraca const char*
+	return tmp;
+}
+
+TString& MojeOperatory::operator+=( TString& a, const TString& b ) {
+	return a = a + b;
+}
+
 

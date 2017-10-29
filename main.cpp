@@ -9,22 +9,28 @@ TString fabryka( const char* s ) {
 	return TString(s);
 }
 
-int main() {
+int main() try {
 	TString s1; 
 	TString s2("drugi obiekt");
 	TString s3 { s2 }; // uniwersalna = jednolita inicjalizacja
 	s1 = s2;
-	//s1 = "tralala";
 	TString s4 { std::move(s1) };
 	TString s5 = fabryka("moja fabryka");
-	s4 = move(s5);
-	s4 = fabryka("ostatni obiekt");
 
-    for ( auto c : s4 ) cout << c << "-";
-    for ( auto& c : s4) c = toupper(c);
-    cout << endl;
-    cout << s4 << endl;
-    cin >> s4;
-    cout << s4 << endl;
+	s2.insert(0,"poczatek|");
+	s2.insert(s2.size(),"|koniec");
+	s2.insert(15,"[srodek]");
+	s2.insert(0,'A');
+	s2.insert(s2.length(),'Z');
+	cout << s2 << endl;
+	s1 = "s1111111111111";
+	s3 = "s333333333";
+	cout << s1+s3 << endl;
+	s1 = s3 + "cos na koniec s1";
+	cout << s1 << endl;
+	s1 += s1;
+	cout << s1 << endl;
 	cout << "-------------------" << endl;
+} catch ( ... ) {
+	cout << "THE END" << endl;
 }

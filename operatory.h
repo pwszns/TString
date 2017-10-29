@@ -10,6 +10,9 @@ namespace MojeOperatory {
 	
 	std::ostream& operator<<(std::ostream& strumien, const TString& s);
 	std::istream& operator>>(std::istream& strumien, TString& s);
+	TString operator+( const TString& a, const TString& b );
+	TString& operator+=( TString& a, const TString& b );
+	
 }
 
 
