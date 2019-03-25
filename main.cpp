@@ -4,6 +4,7 @@
 
 using namespace std;
 using namespace MojeOperatory;
+// komentarz
 
 TString fabryka( const char* s ) {
 	return TString(s);
